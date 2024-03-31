@@ -1,11 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import MainContainer from './MainContainer';
+import LogoSplash from './LogoSplash';
+import { SplashScreen } from 'expo';
+import React, {useEffect, useState, useCallback} from 'react';
 
-export default function App() {
+function App() {
+  const [appIsReady, setAppIsReady] = useState(false);
+
+  const onContinue = () => {
+    // Navigate to the next screen or perform any other action
+    setAppIsReady(true);
+  };
+
+  if (!appIsReady) {
+    return <LogoSplash onContinue={onContinue} />;
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Frontend</Text>
-      <StatusBar style="auto" />
+      <MainContainer />
     </View>
   );
 }
@@ -18,3 +31,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;

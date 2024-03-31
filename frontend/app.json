@@ -15,7 +15,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "permissions": [
+        "NSPhotoLibraryUsageDescription",
+        "NSCameraUsageDescription",
+        "NSMicrophoneUsageDescription",
+        "NSOpenInFiles",
+        "UIFileSharingEnabled",
+        "LSSupportsOpeningDocumentsInPlace",
+        "NSDocumentsFolderUsageDescription"
+      ]
     },
     "android": {
       "adaptiveIcon": {
